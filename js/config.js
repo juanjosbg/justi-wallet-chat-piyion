@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       console.log("Company ID obtenido:", companyId);
   
-      // Esperar a que el componente se registre en el DOM
       customElements.whenDefined("chat-component-piyion").then(() => {
         console.log("Componente de chat definido, agregándolo al DOM...");
   
@@ -24,10 +23,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         chatComponent.id = "chatComponent";
         chatComponent.style.zIndex = "10";
         chatComponent.setAttribute("position", "left");
-        chatComponent.setAttribute("company", companyId);
   
         document.body.appendChild(chatComponent);
         console.log("Chat component añadido al DOM.");
+  
+        // Esperar a que el componente esté completamente cargado
+        setTimeout(() => {
+          chatComponent.setAttribute("company", companyId);
+          console.log("Company ID asignado al componente.");
+        }, 500);
       });
   
     } catch (error) {
