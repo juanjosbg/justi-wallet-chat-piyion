@@ -1,7 +1,10 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    const chatComponent = document.getElementById('chatComponent');
-    if (chatComponent) {
-        const companyId = process.env.NEXT_PUBLIC_CHAT_COMPONENT_COMPANY;
-        chatComponent.setAttribute('company', companyId);
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const chatComponent = document.getElementById("chatComponent");
+  const companyId = document
+    .querySelector('meta[name="chat-company"]')
+    .getAttribute("content");
+
+  if (chatComponent && companyId) {
+    chatComponent.setAttribute("company", companyId);
+  }
 });
