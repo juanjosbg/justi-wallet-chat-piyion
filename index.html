@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es" translate="no">
   <head>
     <meta charset="UTF-8" />
@@ -12,12 +12,32 @@
     ></script>
   </head>
   <body>
-    <h1>sdsdsd</h1>
+    <h1>No.2</h1>
     <div id="root"></div>
     <chat-component-piyion
       company="c881d6ab-8b3c-485b-a6de-e76bd0eb4566"
       style="z-index: 10"
       position="right"
     ></chat-component-piyion>
+
+    <script>
+      window.onerror = function (message, source, lineno, colno, error) {
+        window.ReactNativeWebView?.postMessage(
+          JSON.stringify({ type: "error", message })
+        );
+      };
+
+      document.addEventListener("DOMContentLoaded", function () {
+        window.ReactNativeWebView?.postMessage(
+          JSON.stringify({ type: "loaded", status: "Chat Ready" })
+        );
+      });
+
+      setTimeout(() => {
+        window.ReactNativeWebView?.postMessage(
+          JSON.stringify({ type: "test", message: "Hola desde el chat" })
+        );
+      }, 5000);
+    </script>
   </body>
 </html>
