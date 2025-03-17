@@ -34,12 +34,4 @@
     margin-top: 0;
   }
   
-  /* Estilos responsivos con Bootstrap y Media Queries */
-  chat-component-piyion {
-    position: fixed;
-    bottom: 20px;
-    right: 10px;
-    max-width: 350px;
-    width: 10%;
-    z-index: 9999;
-  }
+  
