@@ -20,6 +20,20 @@
     padding: 20px;
   }
 
+  .cont-Text {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cont-Text h1 {
+    margin-bottom: 10px;
+  }
+  
+  .cont-Text p {
+    margin-top: 0;
+  }
+  
   /* Estilos responsivos con Bootstrap y Media Queries */
   chat-component-piyion {
     position: fixed;
